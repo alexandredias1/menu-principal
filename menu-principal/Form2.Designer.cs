@@ -34,13 +34,15 @@
             textBox2 = new TextBox();
             listViewClientes = new ListView();
             button1 = new Button();
+            label3 = new Label();
+            textBox3 = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(68, 88);
+            label1.Location = new Point(50, 47);
             label1.Name = "label1";
             label1.Size = new Size(179, 28);
             label1.TabIndex = 0;
@@ -48,16 +50,16 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(68, 139);
+            textBox1.Location = new Point(52, 98);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 23);
+            textBox1.Size = new Size(199, 23);
             textBox1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(68, 181);
+            label2.Location = new Point(50, 142);
             label2.Name = "label2";
             label2.Size = new Size(177, 28);
             label2.TabIndex = 2;
@@ -65,16 +67,16 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(68, 227);
+            textBox2.Location = new Point(52, 186);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 23);
+            textBox2.Size = new Size(199, 23);
             textBox2.TabIndex = 3;
             // 
             // listViewClientes
             // 
-            listViewClientes.Location = new Point(422, 47);
+            listViewClientes.Location = new Point(313, 47);
             listViewClientes.Name = "listViewClientes";
-            listViewClientes.Size = new Size(287, 313);
+            listViewClientes.Size = new Size(459, 313);
             listViewClientes.TabIndex = 4;
             listViewClientes.UseCompatibleStateImageBehavior = false;
             listViewClientes.SelectedIndexChanged += listView1_SelectedIndexChanged;
@@ -82,7 +84,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(103, 279);
+            button1.Location = new Point(82, 338);
             button1.Name = "button1";
             button1.Size = new Size(113, 42);
             button1.TabIndex = 5;
@@ -90,11 +92,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(50, 229);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 28);
+            label3.TabIndex = 6;
+            label3.Text = "Salário";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(50, 274);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(201, 23);
+            textBox3.TabIndex = 7;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox3);
+            Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(listViewClientes);
             Controls.Add(textBox2);
@@ -116,5 +137,7 @@
         private TextBox textBox2;
         private ListView listViewClientes;
         private Button button1;
+        private Label label3;
+        private TextBox textBox3;
     }
 }

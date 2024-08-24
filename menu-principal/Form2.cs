@@ -24,16 +24,7 @@ namespace menu_principal
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            var strConexao = "server=localhost;uid=root;database=bancodedados1";
-            var conexao = new MySqlConnection(strConexao);
-            conexao.Open();
-            listViewClientes.View = View.Details;
-            listViewClientes.Columns.Add("ID", 50, HorizontalAlignment.Left);
-            listViewClientes.Columns.Add("Nome", 150, HorizontalAlignment.Left);
-            listViewClientes.Columns.Add("Email", 200, HorizontalAlignment.Left);
-            listViewClientes.FullRowSelect = true; // Ativa a seleção da linha toda
-            listViewClientes.GridLines = true; // Adiciona linhas de grade para melhor visualização
-                                               // Carrega os usuarioss na ListView
+            loaderinicial.Chamartabelas(listViewClientes);
             ClienteHelper.CarregarClientes(listViewClientes);
         }
 
@@ -46,6 +37,7 @@ namespace menu_principal
         {
             string nome = textBox1.Text;
             string email = textBox2.Text;
+            string salario = textBox3.Text;
             string dataCriacao = DateTime.Now.ToString("yyyy-MM-dd");
             string status = "Ativo";
 
@@ -58,8 +50,10 @@ namespace menu_principal
 
                 // Query SQL para inserção de dados na tabela 'usuarios'
                 string query = $"INSERT INTO usuarios (nome, email, DataCriacao, Status) VALUES ('{nome}', '{email}', '{dataCriacao}', '{status}')";
+                string query2 = $"INSERT INTO usuarioperfil (salario) VALUES ('{salario}')";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
+                MySqlCommand cmd2 = new MySqlCommand(query2);
 
                 // Executa o comando de inserção
                 int linhasAfetadas = cmd.ExecuteNonQuery();
